@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Android">
+              <span class="suite-name border-failed">Android</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Android">
+                    <span>Android_Applicaster.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Android">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Android">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Android">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Android">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Android">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Android">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Android" class="hide-methods failed suite-Android"> (hide)</a> <!-- hide-methods failed suite-Android -->
+                      <a href="#" panel-name="suite-Android" class="show-methods failed suite-Android"> (show)</a> <!-- show-methods failed suite-Android -->
+                    </span>
+                    <div class="method-list-content failed suite-Android">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Android" title="com.zee5.ApplicasterScripts.Android_SampleTest" hash-for-method="AndroidAppMixPanelLogin(Guest)">AndroidAppMixPanelLogin(Guest)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Android -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Android" class="panel Android">
+          <div class="suite-Android-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.zee5.ApplicasterScripts.Android_SampleTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AndroidAppMixPanelLogin(Guest)">
+                  </a> <!-- AndroidAppMixPanelLogin(Guest) -->
+                  <span class="method-name">AndroidAppMixPanelLogin</span>
+                  <span class="parameters">(Guest)</span>
+                  <div class="stack-trace">java.lang.AssertionError: Launch time fail expected [true] but found [false]
+	at com.utility.Utilities.verifyInvokationTime(Utilities.java:243)
+	at com.business.zee.Zee5ApplicasterBusinessLogic.verifyAppLaunchTime(Zee5ApplicasterBusinessLogic.java:200)
+	at com.zee5.ApplicasterScripts.Android_SampleTest.AndroidAppMixPanelLogin(Android_SampleTest.java:25)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Android-class-failed -->
+        </div> <!-- panel Android -->
+        <div panel-name="test-xml-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/Users/murali.appadi/Downloads/Code/PWACode/PerfomanceTest/DebugbuidDemo/zee5in-zee5_igs_windows-cb6c01a71526/Android_Applicaster.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Android&quot;&gt;
+  &lt;parameter name=&quot;searchKeyword8&quot; value=&quot;Shivaji Surathkal&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword7&quot; value=&quot;Paaru&quot;/&gt;
+  &lt;parameter name=&quot;SubscriptionPackwithMultipleAccessPaclsUsername&quot; value=&quot;zeetest08@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;searchModuleKeyword&quot; value=&quot;Kamali&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword6&quot; value=&quot;Jamai 2.0&quot;/&gt;
+  &lt;parameter name=&quot;SubscribedUserWith15daysExpiryPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;invalidSearchKeyword&quot; value=&quot;@$_-(;_+&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword5&quot; value=&quot;Chemistry of Kariyappa&quot;/&gt;
+  &lt;parameter name=&quot;MovieName&quot; value=&quot;O God Ganesha 2&quot;/&gt;
+  &lt;parameter name=&quot;ClubContent&quot; value=&quot;Paani Jaisa Pyaar&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword4&quot; value=&quot;Bhinna&quot;/&gt;
+  &lt;parameter name=&quot;RegisteredEmail&quot; value=&quot;zee5latest@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword3&quot; value=&quot;Bablu Dablu - Robo Rumble&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword2&quot; value=&quot;Jodi Hakki&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword1&quot; value=&quot;Paaru gets tipsy&quot;/&gt;
+  &lt;parameter name=&quot;tabName1&quot; value=&quot;Home&quot;/&gt;
+  &lt;parameter name=&quot;SVODEpisode&quot; value=&quot;Aditya apologises to Paarvathi - Paaru&quot;/&gt;
+  &lt;parameter name=&quot;tabName2&quot; value=&quot;Movies&quot;/&gt;
+  &lt;parameter name=&quot;tabName3&quot; value=&quot;ZEE5 Originals&quot;/&gt;
+  &lt;parameter name=&quot;tabName4&quot; value=&quot;Live TV&quot;/&gt;
+  &lt;parameter name=&quot;tabName5&quot; value=&quot;Shows&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword9&quot; value=&quot;Jamai 2.0&quot;/&gt;
+  &lt;parameter name=&quot;SubsUserClubPack&quot; value=&quot;zeetest510@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;validPhnNumber&quot; value=&quot;7892215214&quot;/&gt;
+  &lt;parameter name=&quot;SubscribedUserName&quot; value=&quot;zeetest998@test.com&quot;/&gt;
+  &lt;parameter name=&quot;SVODShow&quot; value=&quot;Code M&quot;/&gt;
+  &lt;parameter name=&quot;SubscriptionPackwithMultipleAccessPaclsPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;UnRegisteredMobile&quot; value=&quot;8073661163&quot;/&gt;
+  &lt;parameter name=&quot;NonsubscribedUserName&quot; value=&quot;zee5latest@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;RSVODPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;displayLanguageSelection2&quot; value=&quot;Marathi&quot;/&gt;
+  &lt;parameter name=&quot;NonsubscribedPassword&quot; value=&quot;User@123&quot;/&gt;
+  &lt;parameter name=&quot;SettingsNonsubscribedUserName&quot; value=&quot;gdm@mailnesia.com&quot;/&gt;
+  &lt;parameter name=&quot;runMode&quot; value=&quot;Suites&quot;/&gt;
+  &lt;parameter name=&quot;ClubPassword&quot; value=&quot;000000&quot;/&gt;
+  &lt;parameter name=&quot;RegisteredMobilePassword&quot; value=&quot;User@123&quot;/&gt;
+  &lt;parameter name=&quot;NonsubscribedUserWithInActivePackPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;RegisteredEmailPassword&quot; value=&quot;User@123&quot;/&gt;
+  &lt;parameter name=&quot;userType&quot; value=&quot;Guest&quot;/&gt;
+  &lt;parameter name=&quot;LastName&quot; value=&quot;UserZee&quot;/&gt;
+  &lt;parameter name=&quot;NonsubscribedUserWithNoTransactionPassword&quot; value=&quot;User@123&quot;/&gt;
+  &lt;parameter name=&quot;SubscribedPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;PackWithDiscountPassword&quot; value=&quot;12345678&quot;/&gt;
+  &lt;parameter name=&quot;PromoCode&quot; value=&quot;PNB20&quot;/&gt;
+  &lt;parameter name=&quot;SVODMovie&quot; value=&quot;47 Days&quot;/&gt;
+  &lt;parameter name=&quot;keyword3&quot; value=&quot;Kam&quot;/&gt;
+  &lt;parameter name=&quot;NonSubsUserKids&quot; value=&quot;igszee0406@yopmail.com&quot;/&gt;
+  &lt;parameter name=&quot;searchKeyword&quot; value=&quot;Aditya praises Paaru&quot;/&gt;
+  &lt;parameter name=&quot;SearchVODContent4&quot; value=&quot;Kurukshetra&quot;/&gt;
+  &lt;parameter name=&quot;SearchVODContent2&quot; value=&quot;Prema Baraha&quot;/&gt;
+  &lt;parameter name=&quot;RSVODUser&quot; value=&quot;testzee5@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;SearchVODContent3&quot; value=&quot;Happy New Year&quot;/&gt;
+  &lt;parameter name=&quot;browserType&quot; value=&quot;Chrome&quot;/&gt;
+  &lt;parameter name=&quot;otp1&quot; value=&quot;1&quot;/&gt;
+  &lt;parameter name=&quot;displayLanguageSelection1&quot; value=&quot;English&quot;/&gt;
+  &lt;parameter name=&quot;otp2&quot; value=&quot;2&quot;/&gt;
+  &lt;parameter name=&quot;SVODMusic&quot; value=&quot;Kalede Hode Naanu - Chambal | Sathish Ninasam | Sonu Gowda&quot;/&gt;
+  &lt;parameter name=&quot;NonsubscribedUserWithInActivePackUsername&quot; value=&quot;zeetestww@test.com&quot;/&gt;
+  &lt;parameter name=&quot;runModule&quot; value=&quot;Suite&quot;/&gt;
+  &lt;parameter name=&quot;searchcontent6&quot; value=&quot;Comedy Kiladigalu Championship - Episode 11&quot;/&gt;
+  &lt;parameter name=&quot;validPassword&quot; value=&quot;User@123&quot;/&gt;
+  &lt;parameter name=&quot;searchcontent5&quot; value=&quot;Comedy Kiladigalu Championship - Episode 10&quot;/&gt;
+  &lt;parameter name=&quot;NonsubscribedUserWithNoTransactionUsername&quot; value=&quot;zeebuild@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;SettingsNonsubscribedPassword&quot; value=&quot;654321&quot;/&gt;
+  &lt;parameter name=&quot;RSVODContent&quot; value=&quot;LockUp&quot;/&gt;
+  &lt;parameter name=&quot;partlySpeltSearchKeyword&quot; value=&quot;Kam&quot;/&gt;
+  &lt;parameter name=&quot;NonSubsPwdKids&quot; value=&quot;654321&quot;/&gt;
+  &lt;parameter name=&quot;SettingsSubscribedPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;otp3&quot; value=&quot;3&quot;/&gt;
+  &lt;parameter name=&quot;searchcontent2&quot; value=&quot;Comedy Kiladigalu Championship - Episode 8&quot;/&gt;
+  &lt;parameter name=&quot;otp4&quot; value=&quot;4&quot;/&gt;
+  &lt;parameter name=&quot;searchcontent1&quot; value=&quot;Sanchari Hrudaya - Chambal&quot;/&gt;
+  &lt;parameter name=&quot;USMNonsubscribedUserName&quot; value=&quot;gdm@mailnesia.com&quot;/&gt;
+  &lt;parameter name=&quot;searchcontent4&quot; value=&quot;Comedy Kiladigalu Championship - Episode 9&quot;/&gt;
+  &lt;parameter name=&quot;ClubUserName&quot; value=&quot;clubpacktesting1@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;searchcontent3&quot; value=&quot;Comedy Kiladigalu Championship - Episode 24&quot;/&gt;
+  &lt;parameter name=&quot;PackWithDiscountUsername&quot; value=&quot;dmgowthu@mailinator.com&quot;/&gt;
+  &lt;parameter name=&quot;loginThrough&quot; value=&quot;login&quot;/&gt;
+  &lt;parameter name=&quot;regUserName&quot; value=&quot;igszeefive3@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;FirstName&quot; value=&quot;Zee&quot;/&gt;
+  &lt;parameter name=&quot;PrepaidCode&quot; value=&quot;Z5PWATI9WlD&quot;/&gt;
+  &lt;parameter name=&quot;SettingsSubscribedUserName&quot; value=&quot;zeein7@mailnesia.com&quot;/&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;newpwa&quot;/&gt;
+  &lt;parameter name=&quot;regPassword&quot; value=&quot;123456&quot;/&gt;
+  &lt;parameter name=&quot;inValidPhnNumber&quot; value=&quot;7892215&quot;/&gt;
+  &lt;parameter name=&quot;VideoQuality&quot; value=&quot;Data saver&quot;/&gt;
+  &lt;parameter name=&quot;USMNonsubscribedPassword&quot; value=&quot;654321&quot;/&gt;
+  &lt;parameter name=&quot;SearchVODContent&quot; value=&quot;Ammana Mane&quot;/&gt;
+  &lt;parameter name=&quot;SubsPwdClubPack&quot; value=&quot;000000&quot;/&gt;
+  &lt;parameter name=&quot;SubscribedUserWith15daysExpiryUsername&quot; value=&quot;testzee5_4@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;RegisteredMobile&quot; value=&quot;7892215214&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.extent.ExtentReporter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Android_SampleTest&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.zee5.ApplicasterScripts.Android_SampleTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Android_SampleTest --&gt;
+&lt;/suite&gt; &lt;!-- Android --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Android_SampleTest (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Android');
+function tableData_Android() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'AndroidAppMixPanelLogin')
+data.setCell(0, 2, 'com.zee5.ApplicasterScripts.Android_SampleTest')
+data.setCell(0, 3, 13);
+window.suiteTableData['Android']= { tableData: data, tableDiv: 'times-div-Android'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 13 ms</span>
+              <div id="times-div-Android">
+              </div> <!-- times-div-Android -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.zee5.ApplicasterScripts.Android_SampleTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">init</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">AndroidAppMixPanelLogin(Guest)</span>
+                <span class="method-start">9219 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDownApp</span>
+                <span class="method-start">9386 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
