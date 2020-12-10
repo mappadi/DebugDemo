@@ -151,14 +151,14 @@ public class Utilities extends ExtentReporter {
 		try {
 			if (Value.equalsIgnoreCase("On")) {
 				System.out.println("Switching On Wifi");
-				String cmd = "/usr/local/bin/adb  shell svc wifi enable";
+				String cmd = "adb shell svc wifi enable";
 				Runtime.getRuntime().exec(cmd);
 				waitTime(5000);
 				logger.info("Wifi Data toggle is Switched On");
 				extent.extentLoggerPass("Wifi Toggle", "Wifi Data toggle is Switched On");
 			} else if (Value.equalsIgnoreCase("Off")) {
 				System.out.println("Switching Off Wifi");
-				String cmd = "/usr/local/bin/adb  shell svc wifi disable";
+				String cmd = "adb shell svc wifi disable";
 				Runtime.getRuntime().exec(cmd);
 				waitTime(3000);
 				logger.info("Wifi Data toggle is Switched Off");
@@ -497,15 +497,15 @@ public class Utilities extends ExtentReporter {
 		String cmd;
 		try {
 			if (command.equalsIgnoreCase("START")) {
-				cmd = "/usr/local/bin/adb  shell am start -n" + " " + activity;
+				cmd = "adb shell am start -n" + " " + activity;
 				Runtime.getRuntime().exec(cmd);
 				logger.info("Started the activity" + cmd);
-				extent.extentLogger("/usr/local/bin/adb Start", "Started the activity" + cmd);
+				extent.extentLogger("adbStart", "Started the activity" + cmd);
 			} else if (command.equalsIgnoreCase("KILL")) {
-				cmd = "/usr/local/bin/adb  shell am force-stop" + " " + activity;
+				cmd = "adb shell am force-stop" + " " + activity;
 				Runtime.getRuntime().exec(cmd);
 				logger.info("Executed the App switch");
-				extent.extentLogger("/usr/local/bin/adb Kill", "Executed the App switch");
+				extent.extentLogger("adbKill", "Executed the App switch");
 			}
 		} catch (Exception e) {
 			logger.error(e);
@@ -519,7 +519,7 @@ public class Utilities extends ExtentReporter {
 	public boolean checkKeyboardDisplayed() throws IOException {
 		boolean mInputShown = false;
 		try {
-			String cmd = "/usr/local/bin/adb  shell dumpsys input_method | grep mInputShown";
+			String cmd = "adb shell dumpsys input_method | grep mInputShown";
 			Process p = Runtime.getRuntime().exec(cmd);
 			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String outputText = "";
@@ -603,10 +603,10 @@ public class Utilities extends ExtentReporter {
 	public void adbKeyevents(int keyevent) {
 
 		try {
-			String cmd = "/usr/local/bin/adb  shell input keyevent" + " " + keyevent;
+			String cmd = "adb shell input keyevent" + " " + keyevent;
 			Runtime.getRuntime().exec(cmd);
 			logger.info("Performed the Keyevent" + keyevent);
-			extent.extentLogger("/usr/local/bin/adb Keyevent", "Performed the Keyevent" + keyevent);
+			extent.extentLogger("adbKeyevent", "Performed the Keyevent" + keyevent);
 		} catch (Exception e) {
 			logger.error(e);
 		}
@@ -1201,7 +1201,7 @@ public class Utilities extends ExtentReporter {
 	public boolean newPageOrNt() {
 		boolean app = false;
 		try {
-			String cmd = "/usr/local/bin/adb  shell \"dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'\"";
+			String cmd = "adb shell \"dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'\"";
 			Process p = Runtime.getRuntime().exec(cmd);
 			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String outputText = "";
@@ -1308,12 +1308,12 @@ public class Utilities extends ExtentReporter {
 
 	public void switchtoLandscapeMode() throws IOException {
 		Runtime.getRuntime().exec(
-				"/usr/local/bin/adb  shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1");
+				"adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1");
 	}
 
 	public void switchtoPortraitMode() throws IOException {
 		Runtime.getRuntime().exec(
-				"/usr/local/bin/adb  shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:0");
+				"adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:0");
 	}
 
 //====================================================================================================================================
@@ -1807,7 +1807,7 @@ public class Utilities extends ExtentReporter {
 	public static String getTheOSVersion() {
 		String version = null;
 		try {
-			String cmd1 = "/usr/local/bin/adb  shell getprop ro.build.version.release";
+			String cmd1 = "adb shell getprop ro.build.version.release";
 			Process p1 = Runtime.getRuntime().exec(cmd1);
 			BufferedReader br = new BufferedReader(new InputStreamReader(p1.getInputStream()));
 			// outputText1 ="";
@@ -1827,11 +1827,11 @@ public class Utilities extends ExtentReporter {
 		String Deviceversion = getTheOSVersion();
 		System.out.println("Turn off wifi");
 		if (Deviceversion.contains("6")) {
-			Runtime.getRuntime().exec("/usr/local/bin/adb  shell am broadcast -a io.appium.settings.wifi --es setstatus disable");
+			Runtime.getRuntime().exec("adb shell am broadcast -a io.appium.settings.wifi --es setstatus disable");
 			logger.info("Turning off wifi");
 			extent.extentLoggerPass("Turning off wifi", "Turning off wifi");
 		} else {
-			Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc wifi disable");
+			Runtime.getRuntime().exec("adb shell svc wifi disable");
 			logger.info("Turning off wifi");
 			extent.extentLoggerPass("Turning off wifi", "Turning off wifi");
 		}
@@ -1841,11 +1841,11 @@ public class Utilities extends ExtentReporter {
 		String Deviceversion = getTheOSVersion();
 		System.out.println("Turn on wifi");
 		if (Deviceversion.contains("6")) {
-			Runtime.getRuntime().exec("/usr/local/bin/adb  shell am broadcast -a io.appium.settings.wifi --es setstatus enable");
+			Runtime.getRuntime().exec("adb shell am broadcast -a io.appium.settings.wifi --es setstatus enable");
 			logger.info("Turning ON wifi");
 			extent.extentLoggerPass("Turning ON wifi", "Turning ON wifi");
 		} else {
-			Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc wifi enable");
+			Runtime.getRuntime().exec("adb shell svc wifi enable");
 			logger.info("Turning ON wifi");
 			extent.extentLoggerPass("Turning ON wifi", "Turning ON wifi");
 		}
@@ -1974,7 +1974,7 @@ public class Utilities extends ExtentReporter {
 
 	public void TVRemoteEvent(int value) throws Exception {
 
-		String cmd = "/usr/local/bin/adb  shell input keyevent " + value + "";
+		String cmd = "adb shell input keyevent " + value + "";
 		System.out.println(cmd);
 		Runtime.getRuntime().exec(cmd);
 

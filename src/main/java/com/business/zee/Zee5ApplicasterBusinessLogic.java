@@ -2698,7 +2698,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		try {
 			getDriver().close();
 			waitTime(5000);
-			String cmd3 = "/usr/local/bin/adb  shell am start -W -a android.intent.action.VIEW -d  \"https://www.zee5.com/" + tabName
+			String cmd3 = "adb shell am start -W -a android.intent.action.VIEW -d  \"https://www.zee5.com/" + tabName
 					+ "\" com.graymatrix.did";
 			Process process = Runtime.getRuntime().exec(cmd3);
 			new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -2852,12 +2852,12 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 
 	public void Wifi_TurnOFFnON() throws Exception {
 		Runtime.getRuntime()
-				.exec("/usr/local/bin/adb  shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings");
+				.exec("adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings");
 		waitTime(2000);
-//		Runtime.getRuntime().exec("/usr/local/bin/adb  shell input keyevent 23");
+//		Runtime.getRuntime().exec("adb shell input keyevent 23");
 		click(AMDGenericObjects.objWifiToggle, "Wifi-Toggle button");
 		waitTime(2000);
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell monkey -p com.graymatrix.did -c android.intent.category.LAUNCHER 1");
+		Runtime.getRuntime().exec("adb shell monkey -p com.graymatrix.did -c android.intent.category.LAUNCHER 1");
 	}
 
 	public void socialLoginValidation(String loginThrough, String usertype) throws Exception {
@@ -4918,16 +4918,16 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		System.out.println("\nValidating Downloading resumes after switching network");
 
 		// Switching Network from Wifi -> Data
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc wifi disable");
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc data enable");
+		Runtime.getRuntime().exec("adb shell svc wifi disable");
+		Runtime.getRuntime().exec("adb shell svc data enable");
 		if (checkElementExist(AMDDownloadPage.objDownloadingCircularBar, "Downloading Icon")) {
 			extent.extentLogger("Downloading", "User is able to continue the download on shuffling wifi to data");
 			logger.info("User is able to continue the download on shuffling wifi to data");
 		}
 		waitTime(2000);
 		// Switching Network from Data -> Wifi
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc data disable");
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc wifi enable");
+		Runtime.getRuntime().exec("adb shell svc data disable");
+		Runtime.getRuntime().exec("adb shell svc wifi enable");
 		if (checkElementExist(AMDDownloadPage.objDownloadingCircularBar, "Downloading Icon")) {
 			extent.extentLogger("Downloading", "User is able to continue the download on shuffling data to wifi");
 			logger.info("User is able to continue the download on shuffling wifi to data");
@@ -5590,7 +5590,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		extent.HeaderChildNode("More Screen Validation");
 		System.out.println("\nMore Section Validation");
 
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc wifi disable");
+		Runtime.getRuntime().exec("adb shell svc wifi disable");
 		if (getOEMName.equalsIgnoreCase("Sony")) {
 			Wifi_TurnOFFnON();
 		}
@@ -5603,7 +5603,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		verifyElementExist(AMDOfflineScreen.objTryAgain, "Try Again");
 		verifyElementExist(AMDOfflineScreen.objGoToDownloads, "Go to Downloads");
 
-		Runtime.getRuntime().exec("/usr/local/bin/adb  shell svc wifi enable");
+		Runtime.getRuntime().exec("adb shell svc wifi enable");
 		if (getOEMName.equalsIgnoreCase("Sony")) {
 			Wifi_TurnOFFnON();
 		}
@@ -5656,7 +5656,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 			click(AMDMoreMenu.objStartDownload, "Start Download");
 
 			String wifi = "";
-			String cmd = "/usr/local/bin/adb  shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
+			String cmd = "adb shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
 			Process p = Runtime.getRuntime().exec(cmd);
 			System.out.println(cmd);
 			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -7052,7 +7052,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		}
 
 		String wifi = "";
-		String cmd = "/usr/local/bin/adb  shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
+		String cmd = "adb shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
 		Process p = Runtime.getRuntime().exec(cmd);
 		System.out.println(cmd);
 		BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -7114,7 +7114,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		}
 
 		String wifii = "";
-		String cmdd = "/usr/local/bin/adb  shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
+		String cmdd = "adb shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
 		Process pp = Runtime.getRuntime().exec(cmdd);
 		System.out.println(cmdd);
 		BufferedReader brr = new BufferedReader(new InputStreamReader(pp.getInputStream()));
@@ -9759,7 +9759,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 			verifyElementPresentAndClick(AMDMoreMenu.objStartDownload, "Start Download");
 
 			String wifi = "";
-			String cmd = "/usr/local/bin/adb  shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
+			String cmd = "adb shell dumpsys \"wifi | grep 'Wi-Fi is'\"";
 			Process p = Runtime.getRuntime().exec(cmd);
 			System.out.println(cmd);
 			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -12087,10 +12087,10 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 	public void adbKeyevents(int keyevent) {
 
 		try {
-			String cmd = "/usr/local/bin/adb  shell input keyevent" + " " + keyevent;
+			String cmd = "adb shell input keyevent" + " " + keyevent;
 			Runtime.getRuntime().exec(cmd);
 			logger.info("Performed the Keyevent" + keyevent);
-			extent.extentLogger("/usr/local/bin/adb Keyevent", "Performed the Keyevent" + keyevent);
+			extent.extentLogger("adbKeyevent", "Performed the Keyevent" + keyevent);
 		} catch (Exception e) {
 			logger.error(e);
 		}
