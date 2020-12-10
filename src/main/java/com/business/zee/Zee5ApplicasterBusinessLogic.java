@@ -132,6 +132,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 	 */
 	public void tearDown() {
 		getDriver().quit();
+		softAssert.assertAll();
 	}
 
 	String pUserType = getParameterFromXML("userType");

@@ -55,7 +55,7 @@ public class Utilities extends ExtentReporter {
 	@SuppressWarnings("rawtypes")
 	public TouchAction touchAction;
 
-	private SoftAssert softAssert = new SoftAssert();
+	protected SoftAssert softAssert = new SoftAssert();
 
 	public static boolean relaunch = false;
 
@@ -232,22 +232,15 @@ public class Utilities extends ExtentReporter {
 	public void verifyInvokationTime(long refTime) throws Exception {
 		System.out.println(diff < refTime);
 		if(diff < 8000) {
-			
-			Assert.assertTrue( true,  "Launch time Pass");
-			//(diff < refTime, true, "Launch time is less than " + refTime/1000 + " seconds");
-			
-			//softAssert.assertEquals(diff < refTime, true, "Launch time is less than " + refTime/1000 + " seconds");
+			softAssert.assertEquals(diff < refTime, true, "Launch time is less than " + refTime/1000 + " seconds");
 			logger.info("Launch time is less than " + refTime/1000 + " seconds");
 			extent.extentLoggerPass("Launch Time", "Launch time is less than " + refTime/1000 + " seconds");
 		}else {
-			Assert.assertTrue(false, "Launch time fail");
-			
-			//(false, true, "Launch time is more than " + refTime/1000 + " seconds");
-//			softAssert.assertAll();
+			softAssert.assertEquals(false, true, "Launch time is more than " + refTime/1000 + " seconds");
 			logger.error("Launch time is more than " + refTime/1000 + " seconds");
 			extent.extentLoggerFail("Launch Time", "Launch time is more than " + refTime/1000 + " seconds");
+//			softAssert.assertAll();
 		}
-		
 	}
 	
 	public boolean verifyElementExist(By byLocator, String str) throws Exception {
