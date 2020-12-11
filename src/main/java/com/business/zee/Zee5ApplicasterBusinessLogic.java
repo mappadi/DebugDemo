@@ -198,7 +198,7 @@ public class Zee5ApplicasterBusinessLogic extends Utilities {
 		extent.HeaderChildNode("Verify App Launch Time");
 		extent.extentLogger("User Type", "UserType : " + userType);
 		logger.info("UserType : " + userType);
-		verifyInvokationTime(5000);
+		verifyInvokationTime(12000);
 
 	}
 	/*
