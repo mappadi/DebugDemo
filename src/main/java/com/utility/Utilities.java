@@ -231,7 +231,7 @@ public class Utilities extends ExtentReporter {
 	 */
 	public void verifyInvokationTime(long refTime) throws Exception {
 		System.out.println(diff < refTime);
-		if(diff < 8000) {
+		if(diff < 12000) {
 			softAssert.assertEquals(diff < refTime, true, "Launch time is less than " + refTime/1000 + " seconds");
 			logger.info("Launch time is less than " + refTime/1000 + " seconds");
 			extent.extentLoggerPass("Launch Time", "Launch time is less than " + refTime/1000 + " seconds");
